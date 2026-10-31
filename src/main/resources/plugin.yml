@@ -1,0 +1,55 @@
+name: PrefixTitles
+version: '1.2.0-paper'
+main: dev.prefixtitles.paper.PrefixTitlesPlugin
+description: Server-side prefixes and titles with menus, HEX colors, gradients, fonts, emoji and player-made custom entries.
+author: Strength SMP
+api-version: '1.21.11'
+commands:
+  pt:
+    description: Prefix & Titles menu and administration
+    aliases: [prefix, prefixes]
+    usage: /pt [custom|admin|clear|grant|revoke|resetcustom|reload|cancel]
+    permission: prefixtitles.use
+permissions:
+  prefixtitles.use:
+    description: Open the Prefix & Titles menu and clear your selection
+    default: true
+  prefixtitles.admin:
+    description: Administer prefixes and titles
+    default: op
+  prefixtitles.custom:
+    description: Create your own custom prefix and title
+    default: true
+  prefixtitles.custom.color:
+    description: Use the colour palette for custom entries
+    default: true
+  prefixtitles.custom.hex:
+    description: Use any HEX colour for custom entries
+    default: true
+  prefixtitles.custom.gradient:
+    description: Make custom entries gradient
+    default: true
+  prefixtitles.custom.bold:
+    description: Bold custom entries
+    default: true
+  prefixtitles.custom.italic:
+    description: Italic custom entries
+    default: true
+  prefixtitles.custom.underline:
+    description: Underlined custom entries
+    default: true
+  prefixtitles.custom.strikethrough:
+    description: Strikethrough custom entries
+    default: true
+  prefixtitles.custom.obfuscated:
+    description: Obfuscated (flickering) custom entries
+    default: op
+  prefixtitles.custom.font:
+    description: Pick a font for custom entries
+    default: true
+  prefixtitles.custom.emoji:
+    description: Use emoji and symbols in custom entries
+    default: true
+  prefixtitles.custom.bypass:
+    description: Skip the blocked-words filter
+    default: op

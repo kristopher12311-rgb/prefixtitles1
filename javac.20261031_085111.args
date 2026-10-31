@@ -1,0 +1,17 @@
+--release
+21
+-proc:none
+-Xmaxerrs
+2000
+-d
+/mnt/data/javac-check
+src/main/java/dev/prefixtitles/paper/PtCommand.java
+src/main/java/dev/prefixtitles/paper/MenuManager.java
+src/main/java/dev/prefixtitles/paper/Emoji.java
+src/main/java/dev/prefixtitles/paper/NameManager.java
+src/main/java/dev/prefixtitles/paper/CustomText.java
+src/main/java/dev/prefixtitles/paper/Kind.java
+src/main/java/dev/prefixtitles/paper/PrefixTitlesPlugin.java
+src/main/java/dev/prefixtitles/paper/Fonts.java
+src/main/java/dev/prefixtitles/paper/TextUtil.java
+src/main/java/dev/prefixtitles/paper/Store.java

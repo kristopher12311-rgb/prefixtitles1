@@ -1,0 +1,28 @@
+PrefixTitles 1.2.0 — verification report
+
+Target: Paper 1.21.11, Java 21
+
+Verified from source:
+- plugin.yml parses as YAML and pom.xml parses as XML.
+- Declared plugin metadata targets Paper API 1.21.11.
+- Player custom prefix/title editor is present.
+- HEX color input and two-color gradient rendering are present.
+- Bold, italic, underline, strikethrough and obfuscated decorations are present.
+- Font registry contains the default font and 3 additional vanilla font keys.
+- Curated emoji/symbol list contains 100 single-code-point entries.
+- Permission checks are present for editing features.
+- Custom entries are persisted to prefixtitles.json.
+- Chat name rendering now remains active when another scoreboard team plugin owns the player's team.
+
+Not verified in this environment:
+- Java/Maven compilation: Maven is not installed in the environment, and package download/network access was unavailable.
+- Runtime behavior on a live Paper server.
+- Visual glyph rendering for every listed symbol on all client language/font configurations.
+
+To produce the installable JAR on a machine with JDK 21 and Maven, run:
+  mvn clean package
+
+Expected output:
+  target/PrefixTitles-Paper-1.2.0.jar
+
+Do not install this source ZIP into the server's plugins folder. Install the built JAR only.
