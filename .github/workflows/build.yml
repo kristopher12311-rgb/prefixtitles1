@@ -1,0 +1,44 @@
+
+name: Build PrefixTitles
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v6
+
+      - name: Set up Java 21 and Maven cache
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build plugin
+        run: mvn --batch-mode --no-transfer-progress clean package
+
+      - name: Verify JAR contents
+        shell: bash
+        run: |
+          JAR="target/PrefixTitles-Paper-1.2.0.jar"
+          test -f "$JAR"
+          jar tf "$JAR" | grep -qx 'plugin.yml'
+          jar tf "$JAR" | grep -qx 'dev/prefixtitles/paper/PrefixTitlesPlugin.class'
+          echo "Verified: $JAR"
+
+      - name: Upload plugin JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: PrefixTitles-Paper-1.2.0
+          path: target/PrefixTitles-Paper-1.2.0.jar
+          if-no-files-found: error
+          retention-days: 14
